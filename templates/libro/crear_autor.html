@@ -1,0 +1,20 @@
+ {% extends 'index.html' %} 
+
+   {% block titulo %} crear autor {% endblock%}
+
+   {% block extrascss%}
+
+   {% endblock %}
+   
+   {% block contenido %}
+      <h1>Creacion de autores</h1>
+      <form method="POST" >
+         {% csrf_token %}
+         {{autor_form.as_p}}
+         <button type="submit">Crear</button>
+      </form>
+   {% endblock %}
+
+   {% block extrasjs %}
+
+   {% endblock %}
