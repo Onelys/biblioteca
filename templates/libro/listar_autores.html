@@ -8,6 +8,8 @@
    
    {% block contenido %}
 
+      <h1>Lista de Autores</h1>
+
       {% if autores %}
          <table border="3">
             <thead>
@@ -17,6 +19,7 @@
                   <th>Apellidos</th>
                   <th>Nacionalidad</th>
                   <th>Descripcion</th>
+                  <th colspan="3">Edicion</th>
                </tr>
             </thead>
             <tbody>
@@ -27,6 +30,9 @@
                   <td>{{autor.apellidos}}</td>
                   <td>{{autor.nacionalidad}}</td>
                   <td>{{autor.descripcion}}</td>
+                  <td><a href="{% url 'libro:editar_autor' autor.id %}">Editar</a></td>
+                  <td><a href="{% url 'libro:eliminar_autor' autor.id %}">Eliminar</a></td>
+                  <td><a href="{% url 'libro:esconder_autor' autor.id %}">Esconder</a></td>
                </tr>
                {% endfor %}
             </tbody>

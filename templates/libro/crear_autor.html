@@ -7,12 +7,16 @@
    {% endblock %}
    
    {% block contenido %}
-      <h1>Creacion de autores</h1>
-      <form method="POST" >
-         {% csrf_token %}
-         {{autor_form.as_p}}
-         <button type="submit">Crear</button>
-      </form>
+      {% if error %}
+         <h1>{{error}}</h1>
+      {% else %}
+         <h1>Creacion de autores</h1>
+         <form method="POST" >
+            {% csrf_token %}
+            {{autor_form.as_p}}
+            <button type="submit">Crear</button>
+         </form>
+      {% endif %}
    {% endblock %}
 
    {% block extrasjs %}

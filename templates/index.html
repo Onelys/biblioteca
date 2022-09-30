@@ -7,15 +7,29 @@
 
    <title>{% block titulo %} index {% endblock %}</title>
 
-   {% block extrascss%}
+   {% block extrascss %}
+   
    
    {% endblock %}
+
+   
 
 </head>
 
 <body>
 
-   {% block contenido %}
+   <header>
+      <nav>
+         <ul>
+            <h2><li style="display:inline; margin: 15px;"><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li style="display:inline; margin: 15px;"><a href="{% url 'libro:crear_autor' %}">Cear Autor</a></li>
+            <li style="display:inline;  margin: 15px"><a href="{% url 'libro:listar_autores' %}">Lista de Autores</a></li></h2>
+            
+         </ul>
+      </nav>
+   </header>    
+
+   {% block contenido %}    
       <h1>libros</h1>
    {% endblock %}
 
